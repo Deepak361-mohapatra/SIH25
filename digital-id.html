@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digital Tourist ID Generation - Smart Tourist Safety</title>
+<link rel="stylesheet" href="sih.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffb3cc);
+    color: #3d1a3a;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .nav-bar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(128, 0, 64, 0.1);
+  }
+
+  .nav-bar a {
+    color: #800040;
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .nav-bar a:hover {
+    color: #9c0045;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    color: #800040;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px #ffa6c9;
+  }
+
+  .page-header p {
+    font-size: 1.3rem;
+    color: #5a0a35;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(128, 0, 64, 0.15);
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .feature-card {
+    background: #ffbfd9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(156, 0, 69, 0.25);
+  }
+
+  .feature-card h3 {
+    color: #800040;
+    margin-bottom: 1rem;
+  }
+
+  .demo-section {
+    background: linear-gradient(135deg, #800040, #9c0045);
+    color: white;
+    padding: 3rem;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .id-card-preview {
+    background: white;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .qr-placeholder {
+    width: 100px;
+    height: 100px;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="nav-bar">
+    <a href="sih.html">Home</a>
+    <a href="digital-id.html">Digital ID</a>
+    <a href="mobile-app.html">Mobile App</a>
+    <a href="ai-detection.html">AI Detection</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="iot-integration.html">IoT Integration</a>
+    <a href="multilingual.html">Multilingual</a>
+    <div style="margin-left: auto; display: flex; gap: 1rem;">
+      <a href="login.html" style="background: #800040; color: white; padding: 0.5rem 1rem; border-radius: 6px;">🔐 Login</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Digital Tourist ID Generation</h1>
+    <p>Blockchain-secured digital identification system for enhanced tourist safety and verification</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Overview</h2>
+    <p>Our Digital Tourist ID system creates secure, blockchain-based identification for tourists at entry points. This revolutionary system ensures tourist safety through verified digital identities while maintaining privacy and security.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>🔐 Blockchain Security</h3>
+        <p>Tamper-proof digital IDs stored on blockchain technology ensuring data integrity and preventing fraud.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 QR Code Integration</h3>
+        <p>Quick access through QR codes for instant verification by authorities and service providers.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🆔 KYC Verification</h3>
+        <p>Complete Know Your Customer verification including identity documents, travel history, and background checks.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🗺️ Itinerary Tracking</h3>
+        <p>Planned travel routes and destinations stored securely for emergency response coordination.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📞 Emergency Contacts</h3>
+        <p>Immediate access to emergency contacts and medical information for rapid response situations.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🌐 Multi-Platform Access</h3>
+        <p>Accessible across mobile devices, web platforms, and integrated with local tourism systems.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Generate Your Digital Tourist ID</h2>
+    <p>Create your secure blockchain-based digital identification</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+      <div>
+        <h3>ID Generation Form</h3>
+        <form id="idGenerationForm" style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px;">
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Full Name:</label>
+            <input type="text" id="fullName" style="width: 100%; padding: 0.8rem; border: none; border-radius: 6px; box-sizing: border-box;" placeholder="Enter your full name" required>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Passport Number:</label>
+            <input type="text" id="passportNumber" style="width: 100%; padding: 0.8rem; border: none; border-radius: 6px; box-sizing: border-box;" placeholder="Enter passport number" required>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Entry Point:</label>
+            <select id="entryPoint" style="width: 100%; padding: 0.8rem; border: none; border-radius: 6px; box-sizing: border-box;" required>
+              <option value="">Select Entry Point</option>
+              <option value="Delhi Airport">Delhi Airport</option>
+              <option value="Mumbai Airport">Mumbai Airport</option>
+              <option value="Bangalore Airport">Bangalore Airport</option>
+              <option value="Chennai Airport">Chennai Airport</option>
+              <option value="Kolkata Airport">Kolkata Airport</option>
+              <option value="Land Border">Land Border</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Emergency Contact:</label>
+            <input type="tel" id="emergencyContact" style="width: 100%; padding: 0.8rem; border: none; border-radius: 6px; box-sizing: border-box;" placeholder="+1-XXX-XXX-XXXX" required>
+          </div>
+          <button type="submit" style="background: #4CAF50; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; margin-top: 1rem;">
+            🔐 Generate Digital ID
+          </button>
+        </form>
+      </div>
+      
+      <div id="generatedIdCard" style="display: none;">
+        <h3>Your Digital Tourist ID</h3>
+        <div class="id-card-preview">
+          <h3 style="color: #800040; margin-top: 0;">DIGITAL TOURIST ID</h3>
+          <div class="qr-placeholder" id="qrCode">QR CODE</div>
+          <p><strong>Name:</strong> <span id="displayName">-</span></p>
+          <p><strong>ID:</strong> <span id="displayId">-</span></p>
+          <p><strong>Valid Until:</strong> <span id="displayValidity">-</span></p>
+          <p><strong>Entry Point:</strong> <span id="displayEntry">-</span></p>
+          <p><strong>Emergency Contact:</strong> <span id="displayContact">-</span></p>
+          <small id="blockchainStatus">⏳ Processing...</small>
+        </div>
+        
+        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+          <button onclick="downloadId()" style="background: #2196F3; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+            📱 Download to Phone
+          </button>
+          <button onclick="printId()" style="background: #FF9800; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+            🖨️ Print ID
+          </button>
+        </div>
+        
+        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+          <button onclick="verifyBlockchain()" style="background: #9C27B0; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+            🔗 Verify Blockchain
+          </button>
+          <button onclick="shareId()" style="background: #4CAF50; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+            📤 Share ID
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KYC Verification Section -->
+  <div class="content-section">
+    <h2>🆔 KYC Verification System</h2>
+    <p>Complete Know Your Customer verification including identity documents, travel history, and background checks.</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+      <div>
+        <h3>Document Upload & Verification</h3>
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border: 2px dashed #800040;">
+          <div id="documentUpload" style="text-align: center;">
+            <div style="font-size: 3rem; color: #800040; margin-bottom: 1rem;">📄</div>
+            <p><strong>Upload Identity Documents</strong></p>
+            <input type="file" id="passportUpload" accept=".pdf,.jpg,.png" style="margin: 0.5rem 0;">
+            <label for="passportUpload" style="display: block; margin: 0.5rem 0;">Passport/ID</label>
+            
+            <input type="file" id="visaUpload" accept=".pdf,.jpg,.png" style="margin: 0.5rem 0;">
+            <label for="visaUpload" style="display: block; margin: 0.5rem 0;">Visa Documents</label>
+            
+            <button onclick="processKYC()" style="background: #4CAF50; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; margin-top: 1rem; cursor: pointer;">
+              🔍 Process KYC Verification
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h3>Verification Status</h3>
+        <div id="kycStatus" style="background: #fff3cd; padding: 2rem; border-radius: 12px; border-left: 4px solid #ffc107;">
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="verification-item">
+              <span>📋 Identity Verification:</span>
+              <span id="identityStatus" style="color: #ffc107;">⏳ Pending</span>
+            </div>
+            <div class="verification-item">
+              <span>🛂 Document Authenticity:</span>
+              <span id="documentStatus" style="color: #ffc107;">⏳ Pending</span>
+            </div>
+            <div class="verification-item">
+              <span>🔍 Background Check:</span>
+              <span id="backgroundStatus" style="color: #ffc107;">⏳ Pending</span>
+            </div>
+            <div class="verification-item">
+              <span>✈️ Travel History:</span>
+              <span id="travelStatus" style="color: #ffc107;">⏳ Pending</span>
+            </div>
+          </div>
+          
+          <div style="margin-top: 2rem; text-align: center;">
+            <div id="kycProgress" style="background: #e9ecef; height: 10px; border-radius: 5px; overflow: hidden;">
+              <div id="progressBar" style="background: #ffc107; height: 100%; width: 0%; transition: width 0.5s ease;"></div>
+            </div>
+            <p id="progressText" style="margin-top: 0.5rem; font-weight: bold;">KYC Progress: 0%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Itinerary Tracking Section -->
+  <div class="content-section">
+    <h2>🗺️ Itinerary Tracking System</h2>
+    <p>Planned travel routes and destinations stored securely for emergency response coordination.</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+      <div>
+        <h3>Plan Your Journey</h3>
+        <form id="itineraryForm" style="background: #f8f9fa; padding: 2rem; border-radius: 12px;">
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Arrival Date:</label>
+            <input type="date" id="arrivalDate" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Departure Date:</label>
+            <input type="date" id="departureDate" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Primary Destinations:</label>
+            <textarea id="destinations" placeholder="Delhi, Agra, Jaipur, Mumbai..." style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; height: 80px;" required></textarea>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Accommodation:</label>
+            <input type="text" id="accommodation" placeholder="Hotel names and addresses" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <button type="submit" style="background: #2196F3; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; width: 100%;">
+            🗺️ Save Itinerary
+          </button>
+        </form>
+      </div>
+      
+      <div>
+        <h3>Your Travel Plan</h3>
+        <div id="itineraryDisplay" style="background: #e8f5e8; padding: 2rem; border-radius: 12px; border-left: 4px solid #4CAF50;">
+          <div style="text-align: center; color: #666;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
+            <p>No itinerary saved yet</p>
+            <p><small>Fill out the form to create your travel plan</small></p>
+          </div>
+        </div>
+        
+        <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+          <button onclick="shareItinerary()" style="background: #FF9800; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+            📤 Share Plan
+          </button>
+          <button onclick="downloadItinerary()" style="background: #9C27B0; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+            📱 Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Emergency Contacts Section -->
+  <div class="content-section">
+    <h2>📞 Emergency Contacts Management</h2>
+    <p>Immediate access to emergency contacts and medical information for rapid response situations.</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+      <div>
+        <h3>Add Emergency Contact</h3>
+        <form id="emergencyForm" style="background: #fff3cd; padding: 2rem; border-radius: 12px;">
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Contact Type:</label>
+            <select id="contactType" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+              <option value="">Select Type</option>
+              <option value="family">👨‍👩‍👧‍👦 Family Member</option>
+              <option value="friend">👥 Friend</option>
+              <option value="doctor">👨‍⚕️ Doctor</option>
+              <option value="embassy">🏛️ Embassy</option>
+              <option value="insurance">🛡️ Insurance</option>
+            </select>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Full Name:</label>
+            <input type="text" id="contactName" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Phone Number:</label>
+            <input type="tel" id="contactPhone" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Relationship:</label>
+            <input type="text" id="contactRelation" placeholder="e.g., Mother, Best Friend, Family Doctor" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <button type="submit" style="background: #f44336; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; width: 100%;">
+            ➕ Add Emergency Contact
+          </button>
+        </form>
+      </div>
+      
+      <div>
+        <h3>Emergency Contacts List</h3>
+        <div id="contactsList" style="background: #f8f9fa; padding: 2rem; border-radius: 12px; max-height: 400px; overflow-y: auto;">
+          <div style="text-align: center; color: #666;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
+            <p>No emergency contacts added</p>
+            <p><small>Add contacts for emergency situations</small></p>
+          </div>
+        </div>
+        
+        <div style="margin-top: 1rem;">
+          <button onclick="testEmergencyAlert()" style="background: #ff4444; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold;">
+            🚨 Test Emergency Alert
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-Platform Access Section -->
+  <div class="content-section">
+    <h2>🌐 Multi-Platform Access Dashboard</h2>
+    <p>Accessible across mobile devices, web platforms, and integrated with local tourism systems.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+      <div class="platform-card" style="background: #e3f2fd; padding: 2rem; border-radius: 12px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+        <h4>Mobile App</h4>
+        <p>iOS & Android applications with offline access</p>
+        <div style="margin: 1rem 0;">
+          <div style="background: #4CAF50; color: white; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">✅ Connected</div>
+          <small>Last sync: 2 minutes ago</small>
+        </div>
+        <button onclick="syncMobile()" style="background: #2196F3; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer;">
+          🔄 Sync Now
+        </button>
+      </div>
+      
+      <div class="platform-card" style="background: #f3e5f5; padding: 2rem; border-radius: 12px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">💻</div>
+        <h4>Web Portal</h4>
+        <p>Browser-based access from any device</p>
+        <div style="margin: 1rem 0;">
+          <div style="background: #4CAF50; color: white; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">✅ Active Session</div>
+          <small>Session expires: 2 hours</small>
+        </div>
+        <button onclick="extendSession()" style="background: #9C27B0; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer;">
+          ⏰ Extend Session
+        </button>
+      </div>
+      
+      <div class="platform-card" style="background: #fff3e0; padding: 2rem; border-radius: 12px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🏛️</div>
+        <h4>Tourism Systems</h4>
+        <p>Integration with local tourism databases</p>
+        <div style="margin: 1rem 0;">
+          <div style="background: #4CAF50; color: white; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">✅ Integrated</div>
+          <small>3 systems connected</small>
+        </div>
+        <button onclick="viewIntegrations()" style="background: #FF9800; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer;">
+          🔗 View Systems
+        </button>
+      </div>
+      
+      <div class="platform-card" style="background: #e8f5e8; padding: 2rem; border-radius: 12px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">☁️</div>
+        <h4>Cloud Backup</h4>
+        <p>Secure cloud storage and synchronization</p>
+        <div style="margin: 1rem 0;">
+          <div style="background: #4CAF50; color: white; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">✅ Backed Up</div>
+          <small>Last backup: 1 hour ago</small>
+        </div>
+        <button onclick="forceBackup()" style="background: #4CAF50; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer;">
+          ☁️ Backup Now
+        </button>
+      </div>
+    </div>
+    
+    <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+      <h3>Access Statistics</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center;">
+        <div>
+          <div style="font-size: 2rem; font-weight: bold; color: #2196F3;">24/7</div>
+          <small>Availability</small>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: bold; color: #4CAF50;">99.9%</div>
+          <small>Uptime</small>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: bold; color: #FF9800;">5</div>
+          <small>Active Devices</small>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: bold; color: #9C27B0;">128-bit</div>
+          <small>Encryption</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Implementation Process</h2>
+    <ol style="font-size: 1.1rem; line-height: 1.8;">
+      <li><strong>Registration:</strong> Tourists register at entry points (airports, borders, hotels)</li>
+      <li><strong>Document Verification:</strong> AI-powered document scanning and verification</li>
+      <li><strong>Biometric Capture:</strong> Secure biometric data collection for identity confirmation</li>
+      <li><strong>Blockchain Storage:</strong> Encrypted data stored on distributed blockchain network</li>
+      <li><strong>ID Generation:</strong> Unique digital ID with QR code generated instantly</li>
+      <li><strong>System Integration:</strong> ID linked to safety monitoring and emergency response systems</li>
+    </ol>
+  </div>
+</div>
+
+<script src="sih.js"></script>
+
+<script>
+// Digital ID Generation Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const idForm = document.getElementById('idGenerationForm');
+    
+    if (idForm) {
+        idForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateDigitalId();
+        });
+    }
+});
+
+function generateDigitalId() {
+    const fullName = document.getElementById('fullName').value;
+    const passportNumber = document.getElementById('passportNumber').value;
+    const entryPoint = document.getElementById('entryPoint').value;
+    const emergencyContact = document.getElementById('emergencyContact').value;
+    
+    // Generate unique ID
+    const uniqueId = 'DT-2025-' + Math.floor(Math.random() * 999999).toString().padStart(6, '0');
+    
+    // Calculate validity date (30 days from now)
+    const validityDate = new Date();
+    validityDate.setDate(validityDate.getDate() + 30);
+    const formattedDate = validityDate.toLocaleDateString();
+    
+    // Update display elements
+    document.getElementById('displayName').textContent = fullName;
+    document.getElementById('displayId').textContent = uniqueId;
+    document.getElementById('displayValidity').textContent = formattedDate;
+    document.getElementById('displayEntry').textContent = entryPoint;
+    document.getElementById('displayContact').textContent = emergencyContact;
+    
+    // Show the generated ID card
+    document.getElementById('generatedIdCard').style.display = 'block';
+    
+    // Simulate blockchain processing
+    simulateBlockchainProcessing();
+    
+    // Generate QR code simulation
+    generateQRCode(uniqueId);
+    
+    // Show success message
+    alert('🎉 Digital Tourist ID Generated Successfully!\n\nYour ID: ' + uniqueId + '\nValid until: ' + formattedDate);
+}
+
+function simulateBlockchainProcessing() {
+    const statusElement = document.getElementById('blockchainStatus');
+    
+    // Processing phase
+    statusElement.innerHTML = '⏳ Processing blockchain verification...';
+    statusElement.style.color = '#FF9800';
+    
+    setTimeout(() => {
+        statusElement.innerHTML = '🔗 Storing on blockchain...';
+        statusElement.style.color = '#2196F3';
+        
+        setTimeout(() => {
+            statusElement.innerHTML = '✅ Blockchain Verified & Secured';
+            statusElement.style.color = '#4CAF50';
+        }, 2000);
+    }, 1500);
+}
+
+function generateQRCode(idNumber) {
+    const qrElement = document.getElementById('qrCode');
+    
+    // Simulate QR code generation
+    setTimeout(() => {
+        qrElement.innerHTML = `
+            <div style="background: white; padding: 10px; border-radius: 8px; display: inline-block;">
+                <div style="width: 80px; height: 80px; background: 
+                    linear-gradient(45deg, #000 25%, transparent 25%), 
+                    linear-gradient(-45deg, #000 25%, transparent 25%), 
+                    linear-gradient(45deg, transparent 75%, #000 75%), 
+                    linear-gradient(-45deg, transparent 75%, #000 75%);
+                    background-size: 8px 8px;
+                    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+                    border: 2px solid #000;
+                "></div>
+                <br><small style="color: #333;">${idNumber}</small>
+            </div>
+        `;
+    }, 1000);
+}
+
+function downloadId() {
+    const idNumber = document.getElementById('displayId').textContent;
+    alert('📱 Digital ID Download Initiated!\n\n' +
+          '• QR Code saved to device\n' +
+          '• Added to digital wallet\n' +
+          '• Mobile app notification sent\n' +
+          '• ID: ' + idNumber);
+    
+    // Simulate download process
+    console.log('Downloading Digital ID:', idNumber);
+}
+
+function printId() {
+    const idNumber = document.getElementById('displayId').textContent;
+    const name = document.getElementById('displayName').textContent;
+    
+    // Create printable content
+    const printContent = `
+        <div style="text-align: center; padding: 2rem; font-family: Arial, sans-serif;">
+            <h2 style="color: #800040;">DIGITAL TOURIST ID</h2>
+            <div style="border: 2px solid #800040; padding: 2rem; margin: 1rem; border-radius: 12px;">
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>ID:</strong> ${idNumber}</p>
+                <p><strong>Valid Until:</strong> ${document.getElementById('displayValidity').textContent}</p>
+                <p><strong>Entry Point:</strong> ${document.getElementById('displayEntry').textContent}</p>
+                <p><strong>Emergency Contact:</strong> ${document.getElementById('displayContact').textContent}</p>
+                <div style="margin: 1rem 0; padding: 1rem; background: #f0f0f0;">
+                    <strong>QR CODE PLACEHOLDER</strong>
+                </div>
+                <small>✅ Blockchain Verified & Secured</small>
+            </div>
+        </div>
+    `;
+    
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(printContent);
+    printWindow.document.close();
+    printWindow.print();
+    
+    alert('🖨️ Printing Digital Tourist ID...\n\nPrint dialog opened in new window.');
+}
+
+function verifyBlockchain() {
+    const idNumber = document.getElementById('displayId').textContent;
+    
+    // Simulate blockchain verification
+    alert('🔗 Blockchain Verification Results:\n\n' +
+          '✅ ID exists on blockchain\n' +
+          '✅ Digital signature valid\n' +
+          '✅ Tamper-proof verification\n' +
+          '✅ Cryptographic hash confirmed\n\n' +
+          'Block Hash: 0x7f9a2b8c...\n' +
+          'Transaction ID: ' + idNumber + '\n' +
+          'Verification Time: ' + new Date().toLocaleString());
+}
+
+function shareId() {
+    const idNumber = document.getElementById('displayId').textContent;
+    const name = document.getElementById('displayName').textContent;
+    
+    // Check if Web Share API is supported
+    if (navigator.share) {
+        navigator.share({
+            title: 'Digital Tourist ID',
+            text: `Digital Tourist ID for ${name} (${idNumber})`,
+            url: window.location.href
+        }).then(() => {
+            console.log('ID shared successfully');
+        }).catch((error) => {
+            console.log('Error sharing:', error);
+            fallbackShare(idNumber, name);
+        });
+    } else {
+        fallbackShare(idNumber, name);
+    }
+}
+
+function fallbackShare(idNumber, name) {
+    const shareText = `Digital Tourist ID: ${name} (${idNumber})\nGenerated via Smart Tourist Safety System`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(shareText).then(() => {
+        alert('📤 ID Information Copied to Clipboard!\n\n' +
+              'You can now paste and share your Digital Tourist ID details.\n\n' +
+              'Shared: ' + shareText);
+    }).catch(() => {
+        alert('📤 Share Digital Tourist ID:\n\n' + shareText + '\n\n(Copy this text to share)');
+    });
+}
+
+// KYC Verification Functions
+function processKYC() {
+    const passportFile = document.getElementById('passportUpload').files[0];
+    const visaFile = document.getElementById('visaUpload').files[0];
+    
+    if (!passportFile) {
+        alert('⚠️ Please upload your passport/ID document first.');
+        return;
+    }
+    
+    // Start KYC processing animation
+    let progress = 0;
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    
+    // Reset all statuses
+    document.getElementById('identityStatus').innerHTML = '🔄 Processing...';
+    document.getElementById('documentStatus').innerHTML = '🔄 Processing...';
+    document.getElementById('backgroundStatus').innerHTML = '🔄 Processing...';
+    document.getElementById('travelStatus').innerHTML = '🔄 Processing...';
+    
+    const kycInterval = setInterval(() => {
+        progress += 25;
+        progressBar.style.width = progress + '%';
+        progressText.textContent = 'KYC Progress: ' + progress + '%';
+        
+        // Update individual statuses
+        if (progress >= 25) {
+            document.getElementById('identityStatus').innerHTML = '✅ Verified';
+            document.getElementById('identityStatus').style.color = '#4CAF50';
+        }
+        if (progress >= 50) {
+            document.getElementById('documentStatus').innerHTML = '✅ Authentic';
+            document.getElementById('documentStatus').style.color = '#4CAF50';
+        }
+        if (progress >= 75) {
+            document.getElementById('backgroundStatus').innerHTML = '✅ Clear';
+            document.getElementById('backgroundStatus').style.color = '#4CAF50';
+        }
+        if (progress >= 100) {
+            document.getElementById('travelStatus').innerHTML = '✅ Verified';
+            document.getElementById('travelStatus').style.color = '#4CAF50';
+            progressBar.style.background = '#4CAF50';
+            document.getElementById('kycStatus').style.background = '#e8f5e8';
+            document.getElementById('kycStatus').style.borderColor = '#4CAF50';
+            clearInterval(kycInterval);
+            
+            setTimeout(() => {
+                alert('🎉 KYC Verification Complete!\n\n✅ Identity Verified\n✅ Documents Authentic\n✅ Background Check Clear\n✅ Travel History Verified\n\nYou are now fully verified in the system.');
+            }, 500);
+        }
+    }, 1500);
+}
+
+// Itinerary Tracking Functions
+let emergencyContacts = [];
+
+function initializeItineraryForm() {
+    const itineraryForm = document.getElementById('itineraryForm');
+    if (itineraryForm) {
+        itineraryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const arrivalDate = document.getElementById('arrivalDate').value;
+            const departureDate = document.getElementById('departureDate').value;
+            const destinations = document.getElementById('destinations').value;
+            const accommodation = document.getElementById('accommodation').value;
+            
+            if (!arrivalDate || !departureDate || !destinations || !accommodation) {
+                alert('⚠️ Please fill in all fields to save your itinerary.');
+                return;
+            }
+            
+            // Calculate trip duration
+            const arrival = new Date(arrivalDate);
+            const departure = new Date(departureDate);
+            const duration = Math.ceil((departure - arrival) / (1000 * 60 * 60 * 24));
+            
+            if (duration <= 0) {
+                alert('⚠️ Departure date must be after arrival date.');
+                return;
+            }
+            
+            // Display saved itinerary
+            const itineraryDisplay = document.getElementById('itineraryDisplay');
+            itineraryDisplay.innerHTML = `
+                <div style="text-align: left;">
+                    <h4 style="color: #4CAF50; margin-bottom: 1rem;">📋 Your Travel Plan</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <strong>📅 Duration:</strong> ${duration} days<br>
+                        <strong>🛬 Arrival:</strong> ${new Date(arrivalDate).toLocaleDateString()}<br>
+                        <strong>🛫 Departure:</strong> ${new Date(departure).toLocaleDateString()}
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong>🗺️ Destinations:</strong><br>
+                        ${destinations}
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong>🏨 Accommodation:</strong><br>
+                        ${accommodation}
+                    </div>
+                    <div style="background: #4CAF50; color: white; padding: 0.5rem; border-radius: 4px; text-align: center; margin-top: 1rem;">
+                        ✅ Itinerary Saved & Synced
+                    </div>
+                </div>
+            `;
+            
+            alert('🗺️ Itinerary Saved Successfully!\n\nYour travel plan has been securely stored and is now accessible to emergency services if needed.');
+        });
+    }
+}
+
+function shareItinerary() {
+    const itineraryDisplay = document.getElementById('itineraryDisplay');
+    if (itineraryDisplay.innerHTML.includes('No itinerary saved')) {
+        alert('⚠️ Please save your itinerary first before sharing.');
+        return;
+    }
+    alert('📤 Itinerary Shared!\n\nYour travel plan has been shared with:\n• Emergency Services\n• Tourism Authorities\n• Selected Emergency Contacts\n\nThis helps ensure your safety during travel.');
+}
+
+function downloadItinerary() {
+    const itineraryDisplay = document.getElementById('itineraryDisplay');
+    if (itineraryDisplay.innerHTML.includes('No itinerary saved')) {
+        alert('⚠️ Please save your itinerary first before downloading.');
+        return;
+    }
+    alert('📱 Itinerary Downloaded!\n\nYour travel plan has been downloaded as:\n• PDF document\n• Mobile app data\n• Offline backup\n\nYou can access it even without internet connection.');
+}
+
+// Emergency Contacts Functions
+function initializeEmergencyForm() {
+    const emergencyForm = document.getElementById('emergencyForm');
+    if (emergencyForm) {
+        emergencyForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const contactType = document.getElementById('contactType').value;
+            const contactName = document.getElementById('contactName').value;
+            const contactPhone = document.getElementById('contactPhone').value;
+            const contactRelation = document.getElementById('contactRelation').value;
+            
+            if (!contactType || !contactName || !contactPhone || !contactRelation) {
+                alert('⚠️ Please fill in all fields to add emergency contact.');
+                return;
+            }
+            
+            // Add contact to array
+            const newContact = {
+                id: Date.now(),
+                type: contactType,
+                name: contactName,
+                phone: contactPhone,
+                relation: contactRelation
+            };
+            
+            emergencyContacts.push(newContact);
+            updateContactsList();
+            
+            // Reset form
+            this.reset();
+            
+            alert('✅ Emergency Contact Added!\n\n' + contactName + ' has been added to your emergency contacts list.');
+        });
+    }
+}
+
+function updateContactsList() {
+    const contactsList = document.getElementById('contactsList');
+    if (!contactsList) return;
+    
+    if (emergencyContacts.length === 0) {
+        contactsList.innerHTML = `
+            <div style="text-align: center; color: #666;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
+                <p>No emergency contacts added</p>
+                <p><small>Add contacts for emergency situations</small></p>
+            </div>
+        `;
+        return;
+    }
+    
+    let contactsHTML = '';
+    emergencyContacts.forEach(contact => {
+        const typeIcons = {
+            family: '👨‍👩‍👧‍👦',
+            friend: '👥',
+            doctor: '👨‍⚕️',
+            embassy: '🏛️',
+            insurance: '🛡️'
+        };
+        
+        contactsHTML += `
+            <div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid #f44336;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: bold; color: #333;">
+                            ${typeIcons[contact.type]} ${contact.name}
+                        </div>
+                        <div style="color: #666; font-size: 0.9rem;">
+                            ${contact.relation} • ${contact.phone}
+                        </div>
+                    </div>
+                    <button onclick="removeContact(${contact.id})" style="background: #ff4444; color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">
+                        🗑️
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+    
+    contactsList.innerHTML = contactsHTML;
+}
+
+function removeContact(contactId) {
+    emergencyContacts = emergencyContacts.filter(contact => contact.id !== contactId);
+    updateContactsList();
+    alert('🗑️ Emergency contact removed successfully.');
+}
+
+function testEmergencyAlert() {
+    if (emergencyContacts.length === 0) {
+        alert('⚠️ Please add emergency contacts first before testing alert system.');
+        return;
+    }
+    
+    alert('🚨 EMERGENCY ALERT TEST\n\n📞 Sending test alerts to:\n' + 
+          emergencyContacts.map(contact => `• ${contact.name} (${contact.phone})`).join('\n') +
+          '\n\n✅ All contacts have been notified!\n\nThis is a test - no real emergency.');
+}
+
+// Multi-Platform Access Functions
+function syncMobile() {
+    const button = event.target;
+    const originalText = button.innerHTML;
+    button.innerHTML = '🔄 Syncing...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+        button.innerHTML = '✅ Synced!';
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+            alert('📱 Mobile Sync Complete!\n\nYour data has been synchronized with:\n• iOS App\n• Android App\n• Offline Storage\n\nLast sync: Just now');
+        }, 1000);
+    }, 2000);
+}
+
+function extendSession() {
+    const button = event.target;
+    const originalText = button.innerHTML;
+    button.innerHTML = '⏰ Extending...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+        button.innerHTML = '✅ Extended!';
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+            alert('⏰ Session Extended!\n\nYour web session has been extended by 2 hours.\n\nNew expiry time: ' + new Date(Date.now() + 2*60*60*1000).toLocaleTimeString());
+        }, 1000);
+    }, 1500);
+}
+
+function viewIntegrations() {
+    alert('🔗 Tourism System Integrations\n\n✅ Connected Systems:\n\n🏛️ Government Tourism Portal\n📊 State Tourism Database\n🚨 Emergency Response System\n\n🔄 Real-time data synchronization active\n🔒 All connections secured with 256-bit encryption');
+}
+
+function forceBackup() {
+    const button = event.target;
+    const originalText = button.innerHTML;
+    button.innerHTML = '☁️ Backing up...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+        button.innerHTML = '✅ Backed up!';
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+            alert('☁️ Cloud Backup Complete!\n\n✅ Data backed up to:\n• Primary Cloud Server\n• Secondary Backup\n• Blockchain Storage\n\nLast backup: Just now\nNext scheduled backup: In 1 hour');
+        }, 1000);
+    }, 2500);
+}
+
+// Add interactive features to existing buttons
+function addInteractiveFeatures() {
+    // Add click effects to feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-5px)';
+            }, 150);
+        });
+    });
+    
+    // Initialize new form handlers
+    initializeItineraryForm();
+    initializeEmergencyForm();
+}
+
+// Initialize interactive features when page loads
+document.addEventListener('DOMContentLoaded', addInteractiveFeatures);
+</script>
+
+</body>
+</html>

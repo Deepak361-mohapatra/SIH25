@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multilingual & Privacy - Smart Tourist Safety</title>
+<link rel="stylesheet" href="sih.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffb3cc);
+    color: #3d1a3a;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .nav-bar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(128, 0, 64, 0.1);
+  }
+
+  .nav-bar a {
+    color: #800040;
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .nav-bar a:hover {
+    color: #9c0045;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    color: #800040;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px #ffa6c9;
+  }
+
+  .content-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(128, 0, 64, 0.15);
+  }
+
+  .language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .language-card {
+    background: #ffbfd9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(156, 0, 69, 0.25);
+    transition: transform 0.3s ease;
+  }
+
+  .language-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .privacy-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .feature-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #800040;
+  }
+
+  .translation-demo {
+    background: #333;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+  }
+
+  .chat-interface {
+    background: white;
+    color: #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .message {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .user-message {
+    background: #e3f2fd;
+    text-align: right;
+  }
+
+  .system-message {
+    background: #f3e5f5;
+    text-align: left;
+  }
+
+  .blockchain-visual {
+    background: linear-gradient(135deg, #800040, #9c0045);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .security-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 4px solid #800040;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="nav-bar">
+    <a href="sih.html">Home</a>
+    <a href="digital-id.html">Digital ID</a>
+    <a href="mobile-app.html">Mobile App</a>
+    <a href="ai-detection.html">AI Detection</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="iot-integration.html">IoT Integration</a>
+    <a href="multilingual.html">Multilingual</a>
+    <div style="margin-left: auto; display: flex; gap: 1rem;">
+      <a href="login.html" style="background: #800040; color: white; padding: 0.5rem 1rem; border-radius: 6px;">🔐 Login</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Multilingual & Privacy</h1>
+    <p>Comprehensive language support and advanced privacy protection for all tourists</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Supported Languages</h2>
+    <p>Our system supports 10+ Indian languages plus English, ensuring effective communication for all tourists visiting India.</p>
+    
+    <div class="language-grid">
+      <div class="language-card">
+        <h3>🇮🇳 हिंदी</h3>
+        <p>Hindi</p>
+      </div>
+      <div class="language-card">
+        <h3>🇬🇧 English</h3>
+        <p>English</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 বাংলা</h3>
+        <p>Bengali</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 தமிழ்</h3>
+        <p>Tamil</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 తెలుగు</h3>
+        <p>Telugu</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 ಕನ್ನಡ</h3>
+        <p>Kannada</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 മലയാളം</h3>
+        <p>Malayalam</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 ગુજરાતી</h3>
+        <p>Gujarati</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 ਪੰਜਾਬੀ</h3>
+        <p>Punjabi</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 मराठी</h3>
+        <p>Marathi</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 ଓଡ଼ିଆ</h3>
+        <p>Odia</p>
+      </div>
+      <div class="language-card">
+        <h3>🇮🇳 اردو</h3>
+        <p>Urdu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="translation-demo">
+    <h2>Real-Time Translation Interface</h2>
+    <div class="chat-interface">
+      <div class="message system-message">
+        <strong>System:</strong> Welcome to Smart Tourist Safety! How can I help you today?<br>
+        <small><em>स्मार्ट टूरिस्ट सेफ्टी में आपका स्वागत है! आज मैं आपकी कैसे सहायता कर सकता हूं?</em></small>
+      </div>
+      <div class="message user-message">
+        <strong>Tourist:</strong> मुझे मदद चाहिए, मैं खो गया हूं<br>
+        <small><em>Translation: I need help, I am lost</em></small>
+      </div>
+      <div class="message system-message">
+        <strong>System:</strong> I understand you're lost. I'm sending your location to nearby police. Stay calm.<br>
+        <small><em>मैं समझ गया कि आप खो गए हैं। मैं आपका स्थान नजदीकी पुलिस को भेज रहा हूं। शांत रहें।</em></small>
+      </div>
+      <div class="message user-message">
+        <strong>Tourist:</strong> ধন্যবাদ, আমি নিরাপদ অনুভব করছি<br>
+        <small><em>Translation: Thank you, I feel safe now</em></small>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Language Features</h2>
+    <div class="privacy-features">
+      <div class="feature-card">
+        <h3>🗣️ Voice Recognition</h3>
+        <p>Advanced speech-to-text in multiple Indian languages with accent adaptation for better accuracy.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📝 Text Translation</h3>
+        <p>Real-time text translation for emergency communications, signs, and important information.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🔊 Audio Output</h3>
+        <p>Text-to-speech functionality with natural-sounding voices in local languages.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 Smart Keyboard</h3>
+        <p>Intelligent input methods supporting multiple scripts and predictive text in regional languages.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🌐 Cultural Context</h3>
+        <p>Context-aware translations that consider cultural nuances and local expressions.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📞 Emergency Translation</h3>
+        <p>Priority translation for emergency situations with pre-configured emergency phrases.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="blockchain-visual">
+    <h2>🔐 Blockchain-Secured Privacy</h2>
+    <p>Your data is protected by advanced blockchain technology ensuring complete privacy and security</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+      <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+        <h4>🔗 Immutable Records</h4>
+        <p>Data cannot be altered or deleted</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+        <h4>🔒 Encrypted Storage</h4>
+        <p>End-to-end encryption protection</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+        <h4>🌐 Decentralized</h4>
+        <p>No single point of failure</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+        <h4>✅ Tamper-Proof</h4>
+        <p>Cryptographic verification</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Privacy Protection Features</h2>
+    <div class="security-grid">
+      <div class="security-card">
+        <h4>🔐 Data Encryption</h4>
+        <p>AES-256 encryption for all personal data</p>
+      </div>
+      <div class="security-card">
+        <h4>🎭 Anonymous Tracking</h4>
+        <p>Location tracking without personal identification</p>
+      </div>
+      <div class="security-card">
+        <h4>⏰ Data Retention</h4>
+        <p>Automatic data deletion after trip completion</p>
+      </div>
+      <div class="security-card">
+        <h4>👤 Consent Management</h4>
+        <p>Granular control over data sharing preferences</p>
+      </div>
+      <div class="security-card">
+        <h4>🔍 Audit Trails</h4>
+        <p>Complete transparency of data access logs</p>
+      </div>
+      <div class="security-card">
+        <h4>🌍 GDPR Compliant</h4>
+        <p>Full compliance with international privacy laws</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Communication Protocols</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div>
+        <h3>Secure Channels</h3>
+        <ul>
+          <li>End-to-end encrypted messaging</li>
+          <li>Secure voice communication</li>
+          <li>Protected video calls</li>
+          <li>Anonymous emergency alerts</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Data Minimization</h3>
+        <ul>
+          <li>Only essential data collection</li>
+          <li>Purpose-limited data usage</li>
+          <li>Automatic data anonymization</li>
+          <li>Regular data purging</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Accessibility Features</h2>
+    <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div>
+          <h4>👁️ Visual Accessibility</h4>
+          <ul>
+            <li>High contrast mode</li>
+            <li>Large text options</li>
+            <li>Screen reader compatibility</li>
+            <li>Color-blind friendly design</li>
+          </ul>
+        </div>
+        <div>
+          <h4>👂 Audio Accessibility</h4>
+          <ul>
+            <li>Visual alert indicators</li>
+            <li>Vibration notifications</li>
+            <li>Sign language support</li>
+            <li>Text-based emergency options</li>
+          </ul>
+        </div>
+        <div>
+          <h4>🤲 Motor Accessibility</h4>
+          <ul>
+            <li>Voice command interface</li>
+            <li>Large touch targets</li>
+            <li>Gesture-based navigation</li>
+            <li>Switch control support</li>
+          </ul>
+        </div>
+        <div>
+          <h4>🧠 Cognitive Accessibility</h4>
+          <ul>
+            <li>Simple, clear interface</li>
+            <li>Step-by-step guidance</li>
+            <li>Visual instruction aids</li>
+            <li>Consistent navigation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Compliance & Standards</h2>
+    <div style="text-align: center;">
+      <p>Our system adheres to international standards and regulations:</p>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin: 2rem 0;">
+        <div style="background: #800040; color: white; padding: 1rem 2rem; border-radius: 8px;">
+          <strong>GDPR</strong><br>
+          <small>European Privacy Regulation</small>
+        </div>
+        <div style="background: #800040; color: white; padding: 1rem 2rem; border-radius: 8px;">
+          <strong>ISO 27001</strong><br>
+          <small>Information Security</small>
+        </div>
+        <div style="background: #800040; color: white; padding: 1rem 2rem; border-radius: 8px;">
+          <strong>WCAG 2.1</strong><br>
+          <small>Web Accessibility</small>
+        </div>
+        <div style="background: #800040; color: white; padding: 1rem 2rem; border-radius: 8px;">
+          <strong>IT Act 2000</strong><br>
+          <small>Indian Cyber Law</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="sih.js"></script>
+</body>
+</html>

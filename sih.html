@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Smart Tourist Safety Monitoring System</title>
+<style>
+  /* Background pinkish gradient and bubbles animation */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffb3cc);
+    color: #3d1a3a;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Bubble container */
+  .bubbles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  /* Each bubble styling */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 182, 193, 0.3); /* light pink */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    bottom: -150px;
+    filter: blur(1.5px);
+  }
+
+  /* Different sizes, positions, speeds */
+  .bubble:nth-child(1) { width: 100px; height: 100px; left: 10%; animation-name: rise1; animation-duration: 30s; }
+  .bubble:nth-child(2) { width: 60px; height: 60px; left: 25%; animation-name: rise2; animation-duration: 25s; }
+  .bubble:nth-child(3) { width: 80px; height: 80px; left: 40%; animation-name: rise3; animation-duration: 35s; }
+  .bubble:nth-child(4) { width: 50px; height: 50px; left: 55%; animation-name: rise1; animation-duration: 28s; }
+  .bubble:nth-child(5) { width: 120px; height: 120px; left: 70%; animation-name: rise2; animation-duration: 32s; }
+  .bubble:nth-child(6) { width: 70px; height: 70px; left: 85%; animation-name: rise3; animation-duration: 30s; }
+
+  /* Bubble rise animations */
+  @keyframes rise1 {
+    0% { transform: translateY(0) translateX(0); opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { transform: translateY(-110vh) translateX(20px); opacity: 0; }
+  }
+  @keyframes rise2 {
+    0% { transform: translateY(0) translateX(0); opacity: 0.25; }
+    50% { opacity: 0.5; }
+    100% { transform: translateY(-115vh) translateX(-15px); opacity: 0; }
+  }
+  @keyframes rise3 {
+    0% { transform: translateY(0) translateX(0); opacity: 0.2; }
+    50% { opacity: 0.4; }
+    100% { transform: translateY(-120vh) translateX(25px); opacity: 0; }
+  }
+
+  header {
+    position: relative;
+    z-index: 10;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #800040;
+    font-weight: 800;
+    text-shadow: 1px 1px 4px #ffa6c9;
+  }
+
+  main {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    background: rgba(255 255 255 / 0.85);
+    border-radius: 16px;
+    padding: 2rem 3rem;
+    box-shadow: 0 10px 25px rgba(128, 0, 64, 0.15);
+  }
+
+  main h2 {
+    margin-top: 0;
+    color: #9c0045;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  main p {
+    line-height: 1.6;
+    color: #5a0a35;
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  section.features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  @media(min-width: 640px) {
+    section.features {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .feature-box {
+    background: #ffbfd9;
+    padding: 1.3rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(156, 0, 69, 0.25);
+    color: #430030;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .feature-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(156, 0, 69, 0.5);
+    color: #430030;
+    text-decoration: none;
+    background: linear-gradient(135deg, #ffbfd9, #ffd9e6);
+  }
+  
+  .feature-box:hover::before {
+    left: 100%;
+  }
+  
+  .feature-box:active {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 10px 20px rgba(156, 0, 69, 0.4);
+  }
+  
+  .feature-box:focus {
+    outline: 3px solid #800040;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(128, 0, 64, 0.2);
+  }
+  
+  .feature-box h3 {
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .feature-box:hover h3 {
+    color: #800040;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  }
+  
+  .feature-box p {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .feature-box:hover p {
+    color: #5a0a35;
+  }
+  
+  /* Special styling for Digital ID box */
+  .feature-box[href="digital-id.html"] {
+    background: linear-gradient(135deg, #ffbfd9, #ff9ec7);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  .feature-box[href="digital-id.html"]:hover {
+    background: linear-gradient(135deg, #ff9ec7, #ffbfd9);
+    border: 2px solid #800040;
+    box-shadow: 0 15px 35px rgba(156, 0, 69, 0.6);
+  }
+  
+  .feature-box[href="digital-id.html"]::after {
+    content: '🔐';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-box[href="digital-id.html"]:hover::after {
+    opacity: 1;
+    transform: rotate(10deg) scale(1.2);
+  }
+  /* Add icons to all feature boxes */
+  .feature-box[href="mobile-app.html"]::after {
+    content: '📱';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-box[href="mobile-app.html"]:hover::after {
+    opacity: 1;
+    transform: rotate(-10deg) scale(1.2);
+  }
+  
+  .feature-box[href="ai-detection.html"]::after {
+    content: '🤖';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-box[href="ai-detection.html"]:hover::after {
+    opacity: 1;
+    transform: rotate(10deg) scale(1.2);
+  }
+  
+  .feature-box[href="dashboard.html"]::after {
+    content: '📊';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-box[href="dashboard.html"]:hover::after {
+    opacity: 1;
+    transform: rotate(-10deg) scale(1.2);
+  }
+  
+  .feature-box[href="iot-integration.html"]::after {
+    content: '⌚';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-box[href="iot-integration.html"]:hover::after {
+    opacity: 1;
+    transform: rotate(10deg) scale(1.2);
+  }
+  
+  .feature-box[href="multilingual.html"]::after {
+    content: '🌐';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-box[href="multilingual.html"]:hover::after {
+    opacity: 1;
+    transform: rotate(-10deg) scale(1.2);
+  }
+  
+  /* Click ripple effect */
+  .feature-box {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-box::after {
+    pointer-events: none;
+  }
+  
+  .feature-box h3 {
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+    font-size: 1.3rem;
+  }
+  .feature-box p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 1rem 1rem;
+    color: #63003a;
+    background: #ffe6f0;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<script src="sih.js"></script>
+
+<div class="bubbles" aria-hidden="true">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
+
+<header>
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <h1>Smart Tourist Safety Monitoring & Incident Response System</h1>
+    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+      <a href="login.html" style="background: #800040; color: white; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">🔐 Login</a>
+      <a href="register.html" style="background: transparent; color: #800040; border: 2px solid #800040; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">📝 Register</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h2>Technology-Driven Tourist Safety Solution</h2>
+  <p>
+    Combining AI, Blockchain, and Geo-Fencing to protect tourists with real-time monitoring, emergency alerts, and secure digital IDs.
+  </p>
+
+  <section class="features" aria-label="Key system features">
+    <a href="digital-id.html" class="feature-box" tabindex="0">
+      <h3>Digital Tourist ID Generation</h3>
+      <p>Blockchain-secured digital IDs issued at entry points containing traveler KYC, itinerary, and emergency contacts.</p>
+    </a>
+    <a href="mobile-app.html" class="feature-box" tabindex="0">
+      <h3>Mobile Safety App</h3>
+      <p>Auto-calculated safety scores, geo-fencing alerts, panic button with live location sharing, and optional real-time tracking.</p>
+    </a>
+    <a href="ai-detection.html" class="feature-box" tabindex="0">
+      <h3>AI Anomaly Detection</h3>
+      <p>Detects location anomalies, distress signals, and alerts authorities for rapid response.</p>
+    </a>
+    <a href="dashboard.html" class="feature-box" tabindex="0">
+      <h3>Police & Tourism Dashboard</h3>
+      <p>Real-time heatmaps, digital ID access, alert history, and automated missing person FIR generation.</p>
+    </a>
+    <a href="iot-integration.html" class="feature-box" tabindex="0">
+      <h3>IoT Integration</h3>
+      <p>Smart wearable bands for continuous health and location signals, with manual SOS feature for high-risk zones.</p>
+    </a>
+    <a href="multilingual.html" class="feature-box" tabindex="0">
+      <h3>Multilingual & Privacy</h3>
+      <p>Supports 10+ Indian languages and English, with encrypted communication and blockchain-secured tamper-proof records.</p>
+    </a>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Smart Tourist Safety Monitoring System &mdash; All rights reserved.
+</footer>
+
+</body>
+</html>

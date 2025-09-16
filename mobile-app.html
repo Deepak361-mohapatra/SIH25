@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mobile Safety App - Smart Tourist Safety</title>
+<link rel="stylesheet" href="sih.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffb3cc);
+    color: #3d1a3a;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .nav-bar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(128, 0, 64, 0.1);
+  }
+
+  .nav-bar a {
+    color: #800040;
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .nav-bar a:hover {
+    color: #9c0045;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    color: #800040;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px #ffa6c9;
+  }
+
+  .content-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(128, 0, 64, 0.15);
+  }
+
+  .app-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .feature-card {
+    background: #ffbfd9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(156, 0, 69, 0.25);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .phone-mockup {
+    background: #333;
+    border-radius: 25px;
+    padding: 2rem;
+    max-width: 300px;
+    margin: 2rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .screen {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    min-height: 400px;
+  }
+
+  .safety-score {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .panic-button {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem auto;
+    display: block;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .panic-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 68, 68, 0.6);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="nav-bar">
+    <a href="sih.html">Home</a>
+    <a href="digital-id.html">Digital ID</a>
+    <a href="mobile-app.html">Mobile App</a>
+    <a href="ai-detection.html">AI Detection</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="iot-integration.html">IoT Integration</a>
+    <a href="multilingual.html">Multilingual</a>
+    <div style="margin-left: auto; display: flex; gap: 1rem;">
+      <a href="login.html" style="background: #800040; color: white; padding: 0.5rem 1rem; border-radius: 6px;">🔐 Login</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Mobile Safety App</h1>
+    <p>Comprehensive mobile application for real-time tourist safety monitoring and emergency response</p>
+  </div>
+
+  <div class="content-section">
+    <h2>App Features</h2>
+    
+    <div class="app-features">
+      <div class="feature-card">
+        <h3>🛡️ Safety Score Calculation</h3>
+        <p>Real-time safety assessment based on location, time, crowd density, and historical incident data.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🚨 Panic Button</h3>
+        <p>One-touch emergency alert system that immediately notifies authorities and emergency contacts.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📍 Geo-Fencing Alerts</h3>
+        <p>Automatic notifications when entering high-risk areas or restricted zones.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 Live Location Sharing</h3>
+        <p>Real-time location sharing with trusted contacts and emergency services.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🗺️ Safe Route Navigation</h3>
+        <p>AI-powered route suggestions prioritizing safety over speed.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📞 Emergency Services</h3>
+        <p>Quick access to local emergency numbers, hospitals, and police stations.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>App Interface Preview</h2>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
+      
+      <div class="phone-mockup">
+        <div class="screen">
+          <h3 style="text-align: center; color: #800040;">Safety Dashboard</h3>
+          <div class="safety-score">
+            <div class="score-circle">85%</div>
+            <p><strong>Current Safety Score</strong></p>
+            <p style="color: #4CAF50;">Safe Zone</p>
+          </div>
+          <button class="panic-button">SOS</button>
+          <div style="text-align: center; margin-top: 1rem;">
+            <p><small>📍 Current Location: Connaught Place, Delhi</small></p>
+            <p><small>🕐 Last Updated: 2 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-mockup">
+        <div class="screen">
+          <h3 style="text-align: center; color: #800040;">Emergency Contacts</h3>
+          <div style="padding: 1rem 0;">
+            <div style="border-bottom: 1px solid #eee; padding: 0.5rem 0;">
+              <strong>🚓 Police:</strong> 100
+            </div>
+            <div style="border-bottom: 1px solid #eee; padding: 0.5rem 0;">
+              <strong>🏥 Medical:</strong> 108
+            </div>
+            <div style="border-bottom: 1px solid #eee; padding: 0.5rem 0;">
+              <strong>🔥 Fire:</strong> 101
+            </div>
+            <div style="border-bottom: 1px solid #eee; padding: 0.5rem 0;">
+              <strong>👨‍👩‍👧‍👦 Family:</strong> +91-XXXX-XXXX
+            </div>
+            <div style="border-bottom: 1px solid #eee; padding: 0.5rem 0;">
+              <strong>🏨 Hotel:</strong> +91-XXXX-XXXX
+            </div>
+          </div>
+          <button style="background: #800040; color: white; border: none; padding: 0.8rem 2rem; border-radius: 8px; width: 100%;">
+            Share Live Location
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Key Functionalities</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div>
+        <h3>Real-Time Monitoring</h3>
+        <ul>
+          <li>GPS location tracking</li>
+          <li>Movement pattern analysis</li>
+          <li>Proximity to safe zones</li>
+          <li>Time-based risk assessment</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Emergency Response</h3>
+        <ul>
+          <li>Instant alert system</li>
+          <li>Automatic location sharing</li>
+          <li>Multi-channel notifications</li>
+          <li>Escalation protocols</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive App Simulator -->
+  <div class="content-section">
+    <h2>🎮 Interactive App Simulator</h2>
+    <p>Try out the mobile app features right here in your browser!</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+      <div>
+        <h3>📱 Live Safety Monitor</h3>
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; text-align: center;">
+          <div id="liveSafetyScore" style="font-size: 3rem; font-weight: bold; color: #4CAF50; margin-bottom: 1rem;">92%</div>
+          <p><strong>Current Safety Score</strong></p>
+          <div id="locationStatus" style="margin: 1rem 0; padding: 1rem; background: #e8f5e8; border-radius: 8px;">
+            📍 <strong>Location:</strong> India Gate, New Delhi<br>
+            🕐 <strong>Last Update:</strong> <span id="lastUpdate">Just now</span>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <button onclick="updateLocation()" style="background: #2196F3; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+              📍 Update Location
+            </button>
+            <button onclick="refreshSafety()" style="background: #4CAF50; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+              🔄 Refresh Score
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h3>🚨 Emergency Controls</h3>
+        <div style="background: #fff3cd; padding: 2rem; border-radius: 12px; text-align: center;">
+          <button id="panicButton" onclick="triggerPanic()" style="background: #ff4444; color: white; border: none; border-radius: 50%; width: 120px; height: 120px; font-size: 1.5rem; font-weight: bold; cursor: pointer; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);">
+            🚨<br>SOS
+          </button>
+          
+          <div id="emergencyStatus" style="margin: 1rem 0; padding: 1rem; background: #d4edda; border-radius: 8px;">
+            ✅ <strong>Status:</strong> Safe & Secure<br>
+            📞 <strong>Emergency Contacts:</strong> 5 Active
+          </div>
+          
+          <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <button onclick="shareLocation()" style="background: #FF9800; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+              📤 Share Location
+            </button>
+            <button onclick="testAlert()" style="background: #9C27B0; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+              🔔 Test Alert
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Route Planning & Navigation -->
+  <div class="content-section">
+    <h2>🗺️ Smart Route Planning</h2>
+    <p>Plan safe routes with real-time safety analysis and crowd monitoring.</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+      <div>
+        <h3>Plan Your Route</h3>
+        <form id="routeForm" style="background: #f8f9fa; padding: 2rem; border-radius: 12px;">
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">From:</label>
+            <input type="text" id="fromLocation" placeholder="Current location" value="India Gate, Delhi" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">To:</label>
+            <input type="text" id="toLocation" placeholder="Enter destination" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Travel Mode:</label>
+            <select id="travelMode" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+              <option value="walking">🚶‍♂️ Walking</option>
+              <option value="driving">🚗 Driving</option>
+              <option value="public">🚌 Public Transport</option>
+              <option value="taxi">🚕 Taxi/Uber</option>
+            </select>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: flex; align-items: center; gap: 0.5rem;">
+              <input type="checkbox" id="prioritizeSafety" checked>
+              <span>🛡️ Prioritize safety over speed</span>
+            </label>
+          </div>
+          
+          <button type="submit" style="background: #2196F3; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; width: 100%;">
+            🗺️ Find Safe Route
+          </button>
+        </form>
+      </div>
+      
+      <div>
+        <h3>Route Analysis</h3>
+        <div id="routeResults" style="background: #e8f5e8; padding: 2rem; border-radius: 12px; min-height: 300px;">
+          <div style="text-align: center; color: #666; margin-top: 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🗺️</div>
+            <p>Enter destination to get route analysis</p>
+            <p><small>We'll analyze safety, crowd density, and travel time</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Geo-Fencing & Alerts -->
+  <div class="content-section">
+    <h2>📍 Geo-Fencing & Safety Alerts</h2>
+    <p>Set up custom safety zones and receive automatic alerts when entering risk areas.</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+      <div>
+        <h3>Create Safety Zone</h3>
+        <form id="geoFenceForm" style="background: #fff3cd; padding: 2rem; border-radius: 12px;">
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Zone Name:</label>
+            <input type="text" id="zoneName" placeholder="e.g., Hotel Area, Tourist District" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Center Location:</label>
+            <input type="text" id="zoneCenter" placeholder="Enter address or landmark" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;" required>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Radius (meters):</label>
+            <input type="range" id="zoneRadius" min="100" max="2000" value="500" style="width: 100%;">
+            <div style="text-align: center; margin-top: 0.5rem;">
+              <span id="radiusValue">500</span> meters
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Zone Type:</label>
+            <select id="zoneType" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+              <option value="safe">🟢 Safe Zone</option>
+              <option value="caution">🟡 Caution Zone</option>
+              <option value="restricted">🔴 Restricted Zone</option>
+            </select>
+          </div>
+          
+          <button type="submit" style="background: #FF9800; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; width: 100%;">
+            📍 Create Geo-Fence
+          </button>
+        </form>
+      </div>
+      
+      <div>
+        <h3>Active Safety Zones</h3>
+        <div id="activeZones" style="background: #f8f9fa; padding: 2rem; border-radius: 12px; max-height: 400px; overflow-y: auto;">
+          <div style="text-align: center; color: #666;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📍</div>
+            <p>No safety zones created</p>
+            <p><small>Create zones to get location-based alerts</small></p>
+          </div>
+        </div>
+        
+        <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+          <button onclick="simulateZoneEntry()" style="background: #4CAF50; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+            🎯 Simulate Entry
+          </button>
+          <button onclick="clearAllZones()" style="background: #f44336; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; flex: 1;">
+            🗑️ Clear All
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Features Testing -->
+  <div class="content-section">
+    <h2>🧪 Feature Testing Center</h2>
+    <p>Test all mobile app features in a controlled environment.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+      <div class="feature-test-card" style="background: #e3f2fd; padding: 2rem; border-radius: 12px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🔔</div>
+        <h4>Push Notifications</h4>
+        <p>Test different types of safety alerts</p>
+        <button onclick="testNotification('safety')" style="background: #2196F3; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; margin: 0.5rem;">
+          🛡️ Safety Alert
+        </button>
+        <button onclick="testNotification('emergency')" style="background: #f44336; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; margin: 0.5rem;">
+          🚨 Emergency
+        </button>
+      </div>
+      
+      <div class="feature-test-card" style="background: #f3e5f5; padding: 2rem; border-radius: 12px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+        <h4>Analytics Dashboard</h4>
+        <p>View your safety and travel statistics</p>
+        <button onclick="showAnalytics()" style="background: #9C27B0; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; width: 100%;">
+          📈 View Analytics
+        </button>
+      </div>
+      
+      <div class="feature-test-card" style="background: #fff3e0; padding: 2rem; border-radius: 12px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🌐</div>
+        <h4>Offline Mode</h4>
+        <p>Test app functionality without internet</p>
+        <button onclick="toggleOfflineMode()" style="background: #FF9800; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; width: 100%;">
+          📱 Toggle Offline
+        </button>
+      </div>
+      
+      <div class="feature-test-card" style="background: #e8f5e8; padding: 2rem; border-radius: 12px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🔐</div>
+        <h4>Privacy Settings</h4>
+        <p>Manage data sharing and privacy</p>
+        <button onclick="showPrivacySettings()" style="background: #4CAF50; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; width: 100%;">
+          ⚙️ Privacy Settings
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>📱 Download Information</h2>
+    <div style="text-align: center;">
+      <p>Available on both Android and iOS platforms with full feature compatibility</p>
+      <div style="display: flex; justify-content: center; gap: 2rem; margin: 2rem 0;">
+        <button onclick="downloadApp('android')" style="background: #800040; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
+          📱 Download for Android
+        </button>
+        <button onclick="downloadApp('ios')" style="background: #800040; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-size: 1.1rem; cursor: pointer;">
+          🍎 Download for iOS
+        </button>
+      </div>
+      
+      <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+        <h3>📊 App Statistics</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center;">
+          <div>
+            <div style="font-size: 2rem; font-weight: bold; color: #4CAF50;">4.8★</div>
+            <small>User Rating</small>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: bold; color: #2196F3;">500K+</div>
+            <small>Downloads</small>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: bold; color: #FF9800;">99.9%</div>
+            <small>Uptime</small>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: bold; color: #9C27B0;">24/7</div>
+            <small>Support</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="sih.js"></script>
+</body>
+</html>

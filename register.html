@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Register - Smart Tourist Safety</title>
+<link rel="stylesheet" href="sih.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffb3cc);
+    color: #3d1a3a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+
+  .register-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(128, 0, 64, 0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .register-header h1 {
+    color: #800040;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 4px #ffa6c9;
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #800040;
+  }
+
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ffbfd9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #800040;
+  }
+
+  .register-btn {
+    background: linear-gradient(135deg, #800040, #9c0045);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .register-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .back-home {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #800040;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="sih.html" class="back-home">← Back to Home</a>
+
+<div class="register-container">
+  <div class="register-header">
+    <h1>📝 Register</h1>
+    <p>Create your Smart Tourist Safety account</p>
+  </div>
+
+  <form class="register-form" id="registerForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="">Select Country</option>
+          <option value="IN">India</option>
+          <option value="US">United States</option>
+          <option value="UK">United Kingdom</option>
+          <option value="CA">Canada</option>
+          <option value="AU">Australia</option>
+          <option value="DE">Germany</option>
+          <option value="FR">France</option>
+          <option value="JP">Japan</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="userType">Account Type</label>
+        <select id="userType" name="userType" required>
+          <option value="">Select Type</option>
+          <option value="tourist">Tourist</option>
+          <option value="authority">Authority</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required minlength="6">
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+    </div>
+
+    <button type="submit" class="register-btn">Create Account</button>
+  </form>
+
+  <div style="margin-top: 2rem;">
+    <a href="login.html" style="color: #800040; text-decoration: none; font-weight: 600;">Already have an account? Login here</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const registerForm = document.getElementById('registerForm');
+
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long!');
+            return;
+        }
+
+        // Simulate registration
+        alert('Registration successful! Please login with your credentials.');
+        window.location.href = 'login.html';
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Police & Tourism Dashboard - Smart Tourist Safety</title>
+<link rel="stylesheet" href="sih.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffb3cc);
+    color: #3d1a3a;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .nav-bar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(128, 0, 64, 0.1);
+  }
+
+  .nav-bar a {
+    color: #800040;
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .nav-bar a:hover {
+    color: #9c0045;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    color: #800040;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px #ffa6c9;
+  }
+
+  .content-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(128, 0, 64, 0.15);
+  }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .dashboard-card {
+    background: #ffbfd9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(156, 0, 69, 0.25);
+    transition: transform 0.3s ease;
+  }
+
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .heatmap-demo {
+    background: #333;
+    border-radius: 12px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .map-placeholder {
+    background: linear-gradient(135deg, #4CAF50, #FFC107, #FF5722);
+    height: 300px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  .alert-panel {
+    background: #ff4444;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+  }
+
+  .alert-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid #fff;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .stat-card {
+    background: #800040;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+  }
+
+  .fir-generator {
+    background: linear-gradient(135deg, #800040, #9c0045);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="nav-bar">
+    <a href="sih.html">Home</a>
+    <a href="digital-id.html">Digital ID</a>
+    <a href="mobile-app.html">Mobile App</a>
+    <a href="ai-detection.html">AI Detection</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="iot-integration.html">IoT Integration</a>
+    <a href="multilingual.html">Multilingual</a>
+    <div style="margin-left: auto; display: flex; gap: 1rem;">
+      <a href="login.html" style="background: #800040; color: white; padding: 0.5rem 1rem; border-radius: 6px;">🔐 Login</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Police & Tourism Dashboard</h1>
+    <p>Comprehensive command center for tourist safety monitoring and emergency response coordination</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Dashboard Features</h2>
+    
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3>🗺️ Real-Time Heatmaps</h3>
+        <p>Visual representation of tourist density, incident reports, and safety zones across the city.</p>
+      </div>
+      <div class="dashboard-card">
+        <h3>🆔 Digital ID Access</h3>
+        <p>Instant access to tourist digital profiles, travel history, and emergency contact information.</p>
+      </div>
+      <div class="dashboard-card">
+        <h3>📊 Alert Management</h3>
+        <p>Centralized alert system with priority classification and automated response protocols.</p>
+      </div>
+      <div class="dashboard-card">
+        <h3>📋 FIR Generation</h3>
+        <p>Automated missing person FIR creation with pre-filled tourist information and incident details.</p>
+      </div>
+      <div class="dashboard-card">
+        <h3>📈 Analytics & Reports</h3>
+        <p>Comprehensive reporting on tourist safety trends, incident patterns, and response effectiveness.</p>
+      </div>
+      <div class="dashboard-card">
+        <h3>🚨 Emergency Coordination</h3>
+        <p>Multi-agency coordination platform for police, medical, and rescue team deployment.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Live Safety Heatmap</h2>
+    <div class="heatmap-demo">
+      <h3>Delhi Tourist Safety Map</h3>
+      <div class="map-placeholder">
+        🗺️ Interactive Safety Heatmap<br>
+        <small>Green: Safe Zones | Yellow: Moderate Risk | Red: High Risk</small>
+      </div>
+      <div style="display: flex; justify-content: space-around; margin-top: 1rem;">
+        <div>📍 Active Tourists: 1,247</div>
+        <div>🚨 Active Alerts: 3</div>
+        <div>👮 Officers Deployed: 89</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Current Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">1,247</span>
+        <div>Active Tourists</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">98.7%</span>
+        <div>Safety Score</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">3</span>
+        <div>Active Alerts</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">89</span>
+        <div>Officers on Duty</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">15</span>
+        <div>Resolved Today</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">2.3min</span>
+        <div>Avg Response Time</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-panel">
+    <h2>🚨 Active Alerts</h2>
+    <div class="alert-item">
+      <strong>HIGH PRIORITY</strong> - Tourist ID: DT-2025-001234<br>
+      <small>Location Anomaly detected at Old Delhi Market | Last seen: 3 hours ago</small><br>
+      <button style="background: white; color: #ff4444; border: none; padding: 0.5rem 1rem; border-radius: 4px; margin-top: 0.5rem;">
+        Dispatch Unit
+      </button>
+    </div>
+    <div class="alert-item">
+      <strong>MEDIUM PRIORITY</strong> - Tourist ID: DT-2025-005678<br>
+      <small>Panic button activated at India Gate | Response team en route</small><br>
+      <button style="background: white; color: #ff4444; border: none; padding: 0.5rem 1rem; border-radius: 4px; margin-top: 0.5rem;">
+        View Details
+      </button>
+    </div>
+    <div class="alert-item">
+      <strong>LOW PRIORITY</strong> - Tourist ID: DT-2025-009012<br>
+      <small>Geo-fence violation at restricted area | Tourist notified</small><br>
+      <button style="background: white; color: #ff4444; border: none; padding: 0.5rem 1rem; border-radius: 4px; margin-top: 0.5rem;">
+        Monitor
+      </button>
+    </div>
+  </div>
+
+  <div class="fir-generator">
+    <h2>📋 Automated FIR Generation</h2>
+    <p>System automatically generates missing person FIRs when tourists are unresponsive for extended periods.</p>
+    <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <h4>Sample Auto-Generated FIR</h4>
+      <p><strong>FIR No:</strong> MP/2025/001234</p>
+      <p><strong>Missing Person:</strong> John Doe (Tourist ID: DT-2025-001234)</p>
+      <p><strong>Last Known Location:</strong> Chandni Chowk, Old Delhi</p>
+      <p><strong>Time Missing:</strong> 6 hours</p>
+      <p><strong>Emergency Contact:</strong> +1-XXX-XXX-XXXX (USA)</p>
+      <p><strong>Hotel:</strong> Hotel Taj Palace, New Delhi</p>
+      <p><strong>Status:</strong> Investigation in Progress</p>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Dashboard Access Levels</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+      <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+        <h4>👮 Police Officers</h4>
+        <ul>
+          <li>Real-time alerts and notifications</li>
+          <li>Tourist location tracking</li>
+          <li>Incident response coordination</li>
+          <li>FIR generation and management</li>
+        </ul>
+      </div>
+      <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+        <h4>🏛️ Tourism Department</h4>
+        <ul>
+          <li>Tourist flow analytics</li>
+          <li>Safety zone management</li>
+          <li>Incident trend analysis</li>
+          <li>Resource allocation planning</li>
+        </ul>
+      </div>
+      <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+        <h4>🚑 Emergency Services</h4>
+        <ul>
+          <li>Medical emergency alerts</li>
+          <li>Ambulance dispatch coordination</li>
+          <li>Hospital bed availability</li>
+          <li>Medical history access</li>
+        </ul>
+      </div>
+      <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+        <h4>👨‍💼 Administrators</h4>
+        <ul>
+          <li>System configuration</li>
+          <li>User access management</li>
+          <li>Performance monitoring</li>
+          <li>Data analytics and reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="sih.js"></script>
+</body>
+</html>

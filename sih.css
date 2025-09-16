@@ -1,0 +1,145 @@
+/* CSS to style Visme form container and page */
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 100vh;
+  }
+  
+  .visme.d {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+  
+  /* Optional: Responsive adjustment */
+  @media (max-width: 640px) {
+    .visme.d {
+      padding: 10px;
+      margin-top: 10px;
+    }
+  }
+
+/* Shared CSS for Smart Tourist Safety Monitoring System */
+
+/* Common Navigation Styles */
+.nav-bar {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(128, 0, 64, 0.1);
+}
+
+.nav-bar a {
+  color: #800040;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: #9c0045;
+}
+
+.nav-bar a.active {
+  color: #9c0045;
+  border-bottom: 2px solid #9c0045;
+}
+
+/* Common Container Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Common Content Section Styles */
+.content-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(128, 0, 64, 0.15);
+}
+
+/* Common Feature Card Styles */
+.feature-card {
+  background: #ffbfd9;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(156, 0, 69, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  color: #800040;
+  margin-bottom: 1rem;
+}
+
+/* Common Button Styles */
+.btn-primary {
+  background: #800040;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #9c0045;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #800040;
+  border: 2px solid #800040;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #800040;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .nav-bar {
+    padding: 1rem;
+  }
+  
+  .nav-bar a {
+    margin-right: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .content-section {
+    padding: 2rem;
+  }
+}

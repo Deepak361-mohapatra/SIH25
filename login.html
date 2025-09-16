@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login - Smart Tourist Safety</title>
+<link rel="stylesheet" href="sih.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffb3cc);
+    color: #3d1a3a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(128, 0, 64, 0.2);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+  }
+
+  .login-header {
+    margin-bottom: 2rem;
+  }
+
+  .login-header h1 {
+    color: #800040;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 4px #ffa6c9;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    text-align: left;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #800040;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ffbfd9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: #800040;
+  }
+
+  .user-type {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .user-type-option {
+    padding: 1rem;
+    border: 2px solid #ffbfd9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .user-type-option:hover,
+  .user-type-option.selected {
+    border-color: #800040;
+    background: #ffbfd9;
+  }
+
+  .login-btn {
+    background: linear-gradient(135deg, #800040, #9c0045);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .login-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .links a {
+    color: #800040;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .links a:hover {
+    text-decoration: underline;
+  }
+
+  .back-home {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #800040;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .back-home:hover {
+    background: white;
+  }
+</style>
+</head>
+<body>
+
+<a href="sih.html" class="back-home">← Back to Home</a>
+
+<div class="login-container">
+  <div class="login-header">
+    <h1>🛡️ Login</h1>
+    <p>Access your Smart Tourist Safety account</p>
+  </div>
+
+  <form class="login-form" id="loginForm">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+
+    <div class="form-group">
+      <label>User Type</label>
+      <div class="user-type">
+        <div class="user-type-option" data-type="tourist">
+          <strong>🧳 Tourist</strong><br>
+          <small>Visitor Access</small>
+        </div>
+        <div class="user-type-option" data-type="authority">
+          <strong>👮 Authority</strong><br>
+          <small>Police/Admin</small>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="login-btn">Login to Dashboard</button>
+  </form>
+
+  <div class="links">
+    <a href="register.html">Create New Account</a>
+    <a href="forgot-password.html">Forgot Password?</a>
+  </div>
+</div>
+
+<script>
+// Login form functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const userTypeOptions = document.querySelectorAll('.user-type-option');
+    const loginForm = document.getElementById('loginForm');
+    let selectedUserType = '';
+
+    // User type selection
+    userTypeOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            userTypeOptions.forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedUserType = this.dataset.type;
+        });
+    });
+
+    // Form submission
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        if (!selectedUserType) {
+            alert('Please select a user type');
+            return;
+        }
+
+        // Simulate login process
+        console.log('Login attempt:', { email, userType: selectedUserType });
+        
+        // Demo credentials
+        if (email === 'tourist@demo.com' && password === 'demo123') {
+            alert('Login successful! Redirecting to tourist dashboard...');
+            window.location.href = 'tourist-dashboard.html';
+        } else if (email === 'admin@demo.com' && password === 'admin123') {
+            alert('Login successful! Redirecting to admin dashboard...');
+            window.location.href = 'dashboard.html';
+        } else {
+            alert('Invalid credentials. Try:\nTourist: tourist@demo.com / demo123\nAdmin: admin@demo.com / admin123');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

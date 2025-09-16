@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Anomaly Detection - Smart Tourist Safety</title>
+<link rel="stylesheet" href="sih.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffb3cc);
+    color: #3d1a3a;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .nav-bar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(128, 0, 64, 0.1);
+  }
+
+  .nav-bar a {
+    color: #800040;
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .nav-bar a:hover {
+    color: #9c0045;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 3rem;
+    color: #800040;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px #ffa6c9;
+  }
+
+  .content-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(128, 0, 64, 0.15);
+  }
+
+  .ai-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .feature-card {
+    background: #ffbfd9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(156, 0, 69, 0.25);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .detection-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .flow-step {
+    background: #800040;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+
+  .flow-step::after {
+    content: '→';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #800040;
+  }
+
+  .flow-step:last-child::after {
+    display: none;
+  }
+
+  .alert-demo {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .metric-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid #800040;
+  }
+
+  .metric-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #800040;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="nav-bar">
+    <a href="sih.html">Home</a>
+    <a href="digital-id.html">Digital ID</a>
+    <a href="mobile-app.html">Mobile App</a>
+    <a href="ai-detection.html">AI Detection</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="iot-integration.html">IoT Integration</a>
+    <a href="multilingual.html">Multilingual</a>
+    <div style="margin-left: auto; display: flex; gap: 1rem;">
+      <a href="login.html" style="background: #800040; color: white; padding: 0.5rem 1rem; border-radius: 6px;">🔐 Login</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>AI Anomaly Detection</h1>
+    <p>Advanced artificial intelligence system for detecting tourist safety anomalies and emergency situations</p>
+  </div>
+
+  <div class="content-section">
+    <h2>AI Detection Capabilities</h2>
+    
+    <div class="ai-features">
+      <div class="feature-card">
+        <h3>🗺️ Location Anomaly Detection</h3>
+        <p>Identifies unusual movement patterns, deviation from planned routes, and visits to high-risk areas.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 Behavioral Analysis</h3>
+        <p>Monitors app usage patterns, communication frequency, and device interaction to detect distress signals.</p>
+      </div>
+      <div class="feature-card">
+        <h3>⏰ Time-Based Alerts</h3>
+        <p>Detects prolonged inactivity, missed check-ins, and unusual timing of activities.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🚨 Emergency Pattern Recognition</h3>
+        <p>Recognizes emergency situations through multiple data points and triggers immediate response.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📊 Predictive Analytics</h3>
+        <p>Uses historical data to predict potential risks and proactively alert tourists and authorities.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🔍 Multi-Source Integration</h3>
+        <p>Combines GPS, IoT sensors, social media, and communication data for comprehensive analysis.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Detection Process Flow</h2>
+    <div class="detection-flow">
+      <div class="flow-step">
+        <h4>Data Collection</h4>
+        <p>GPS, IoT, App Usage</p>
+      </div>
+      <div class="flow-step">
+        <h4>AI Analysis</h4>
+        <p>Pattern Recognition</p>
+      </div>
+      <div class="flow-step">
+        <h4>Risk Assessment</h4>
+        <p>Threat Level Calculation</p>
+      </div>
+      <div class="flow-step">
+        <h4>Alert Generation</h4>
+        <p>Automated Response</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-demo">
+    <h2>🚨 Sample Alert Detection</h2>
+    <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p><strong>ANOMALY DETECTED</strong></p>
+      <p>Tourist ID: DT-2025-001234</p>
+      <p>Alert Type: Location Deviation + Prolonged Inactivity</p>
+      <p>Risk Level: HIGH</p>
+      <p>Last Known Location: Old Delhi Market Area</p>
+      <p>Time Since Last Activity: 3 hours</p>
+      <p><strong>Action Taken:</strong> Authorities notified, Emergency contacts alerted</p>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>AI Performance Metrics</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-number">99.2%</div>
+        <p>Detection Accuracy</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">< 30s</div>
+        <p>Response Time</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">0.1%</div>
+        <p>False Positive Rate</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">24/7</div>
+        <p>Monitoring Coverage</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Machine Learning Models</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div>
+        <h3>Supervised Learning</h3>
+        <ul>
+          <li>Historical incident pattern analysis</li>
+          <li>Emergency situation classification</li>
+          <li>Risk factor identification</li>
+          <li>Behavioral baseline establishment</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Unsupervised Learning</h3>
+        <ul>
+          <li>Anomaly detection in real-time data</li>
+          <li>Clustering of similar incidents</li>
+          <li>Pattern discovery in tourist behavior</li>
+          <li>Outlier identification</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Integration Points</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+      <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+        <h4>📱 Mobile App Integration</h4>
+        <p>Real-time data streaming from tourist mobile applications</p>
+      </div>
+      <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+        <h4>🏢 Police Dashboard</h4>
+        <p>Direct alert forwarding to law enforcement systems</p>
+      </div>
+      <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+        <h4>🏥 Emergency Services</h4>
+        <p>Automated notification to medical and rescue teams</p>
+      </div>
+      <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+        <h4>🌐 IoT Network</h4>
+        <p>Integration with smart city sensors and devices</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="sih.js"></script>
+</body>
+</html>
